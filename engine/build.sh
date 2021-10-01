@@ -9,8 +9,10 @@ cFilenames=$(find . -type f -name "*.c")
 
 # echo "Files:" $cFilenames
 
+source ~/vulkan/1.2.162.1/setup-env.sh
+
 assembly="engine"
-compilerFlags="-g -shared -fdeclspec -fPIC"
+compilerFlags="-g -shared -fdeclspec -fPIC -Wvarargs -Wall -Werror"
 # -fms-extensions 
 # -Wall -Werror
 includeFlags="-Isrc -I$VULKAN_SDK/include"
