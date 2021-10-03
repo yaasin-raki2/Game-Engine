@@ -3,23 +3,13 @@
 #include <stdio.h>
 
 // TODO: Test
-#include <platform/platform.h>
+#include <core/application.h>
 
 int main(void) {
-    KFATAL("A test message: %f", 13.37f);
-    KERROR("A test message: %f", 13.37f);
-    KWARN("A test message: %f", 13.37f);
-    KINFO("A test message: %f", 13.37f);
-    KDEBUG("A test message: %f", 13.37f);
-    KTRACE("A test message: %f", 13.37f);
+    application_config config = {100, 100, 480, 480, "Skyrim"};
 
-    platform_state state;
-    if (platform_startup(&state, "Vulkan Engine", 100, 100, 1280, 720)) {
-        while (TRUE) {
-            platform_pump_messages(&state);
-        }
-    }
-    platform_shutdown(&state);
+    application_create(&config);
+    application_run();
 
     return (0);
 }

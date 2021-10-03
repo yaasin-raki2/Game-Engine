@@ -149,7 +149,7 @@ void *platform_set_memory(void *dest, i32 value, u64 size) {
 void platform_console_write(const char *message, u8 colour) {
     HANDLE console_handle = GetStdHandle(STD_OUTPUT_HANDLE);
     // FATAL, ERROR, WARN, INFO, DEBUG, TRACE
-    static u8 levels[6] = {64, 4, 6, 2, 1, 0};
+    static u8 levels[6] = {64, 4, 6, 2, 1, 5};
     SetConsoleTextAttribute(console_handle, levels[colour]);
 
     OutputDebugStringA(message);
