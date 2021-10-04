@@ -1,6 +1,8 @@
 #pragma once
 
-#include "../defines.h"
+#include "defines.h"
+
+struct game;
 
 // Application Configurations
 typedef struct application_config {
@@ -21,6 +23,6 @@ typedef struct application_config {
 
 } application_config;
 
-KAPI b8 application_create(application_config *config);
+KAPI b8 application_create(struct game *game_inst);
 
 KAPI b8 application_run();
